@@ -13,7 +13,8 @@ MODEL_PATH = os.path.join(
 print("Cargando SBERT...")
 
 sbert = SentenceTransformer(
-    "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+    "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    cache_folder="/opt/render/project/.cache"
 )
 
 print("Cargando clasificador...")
