@@ -13,9 +13,13 @@ AWS_SECRET_ACCESS_KEY = os.getenv(
     "AWS_SECRET_ACCESS_KEY"
 )
 
-REGION = "us-east-1"
+BUCKET = os.getenv(
+    "AWS_BUCKET_NAME"
+)
 
-BUCKET = "TU_BUCKET"
+REGION = os.getenv(
+    "AWS_REGION"
+)
 
 transcribe = boto3.client(
     "transcribe",
