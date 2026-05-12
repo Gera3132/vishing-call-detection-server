@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ax3#p(@+c!^82uf=f44*7nq@bp^qh_0f6ddv%5y8em!jash^m!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["vishing-call-detection-server.onrender.com"]
 
 
 # Application definition
