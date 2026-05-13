@@ -21,6 +21,7 @@ def analyze_audio(request):
     try:
         print("Estamos en el try")
         audio = request.FILES.get("audio")
+        print("SIZE:", audio.size)
 
         if not audio:
 
