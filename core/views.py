@@ -10,6 +10,7 @@ from .predictor import predecir_texto
 
 @csrf_exempt
 def analyze_audio(request):
+    print("Request recibida analyze_audio")
 
     if request.method != "POST":
 
@@ -18,7 +19,7 @@ def analyze_audio(request):
         })
 
     try:
-
+        print("Estamos en el try")
         audio = request.FILES.get("audio")
 
         if not audio:
@@ -28,13 +29,19 @@ def analyze_audio(request):
             })
 
         # Subir S3
+        print("Subiendo audio")
         audio_url = subir_audio_s3(audio)
+        print("Audio subido:", audio_url)
 
         # Transcribir
+        print("Transcribiendo...")
         texto = transcribir_audio(audio_url)
+        print("Texto:", texto)
 
         # IA
+        print("Calculando riesgo...")
         riesgo = predecir_texto(texto)
+        print("Riesgo:", riesgo)
 
         return JsonResponse({
 
