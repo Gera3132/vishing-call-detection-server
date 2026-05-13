@@ -1,6 +1,7 @@
 import os
 from sentence_transformers import SentenceTransformer
 from joblib import load
+import logging
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -10,7 +11,7 @@ MODEL_PATH = os.path.join(
     "classifier_lr_balanced.joblib"
 )
 
-print("Cargando SBERT...")
+logging.warning("Cargando SBERT...")
 
 sbert = SentenceTransformer(
     "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
@@ -21,7 +22,7 @@ print("Cargando clasificador...")
 
 clf = load(MODEL_PATH)
 
-print("Modelo cargado correctamente")
+logging.warning("Modelo cargado correctamente")
 
 
 def predecir_texto(texto):

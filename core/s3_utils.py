@@ -29,7 +29,7 @@ s3 = boto3.client(
 
 def subir_audio_s3(audio_file):
 
-    nombre = f"audios/{uuid.uuid4()}.3gp"
+    nombre = f"audios/{uuid.uuid4()}.mp4"
 
     s3.upload_fileobj(
         audio_file,
