@@ -38,7 +38,7 @@ def transcribir_audio(audio_uri):
         Media={
             "MediaFileUri": audio_uri
         },
-        MediaFormat="3gp",
+        MediaFormat="mp4",
         LanguageCode="es-MX"
     )
 
